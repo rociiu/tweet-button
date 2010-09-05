@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Tweet current url to twitter</title>
+		<script type="text/javascript" charset="utf-8">
+			function tweetURL(event) {
+				if(event.command == "twitter_url_event") {
+					var currentURL = safari.application.activeBrowserWindow.activeTab.url;
+					event.target.browserWindow.activeTab.url = "http://twitter.com?status=" + currentURL;
+				}
+			}
+			safari.application.addEventListener("command", tweetURL, false);
+		</script>
+	</head>
+	<body>
+		<h1>Hello !</h1>
+	</body>
+</html>
